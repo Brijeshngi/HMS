@@ -1,5 +1,8 @@
 import app from "./app.js";
+import { connectDB } from "./config/database.js";
 
-app.listen(4000, () => {
-  console.log(`server working on 4000`);
+connectDB();
+
+app.listen(process.env.PORT, () => {
+  console.log(`server working on ${process.env.PORT}`);
 });
