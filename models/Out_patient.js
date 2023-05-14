@@ -20,3 +20,5 @@ const schema = mongoose.Schema({
     Date: Date.now(),
   },
 });
+
+export const OutPatient = mongoose.model("OutPatient", schema);
