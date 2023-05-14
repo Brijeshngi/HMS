@@ -7,6 +7,7 @@ const schema = mongoose.Schema({
   },
   patient_type: {
     type: String,
+    required: true,
     enum: ["IPD", "OPD"],
   },
   medicine_charge: {
@@ -19,6 +20,7 @@ const schema = mongoose.Schema({
   },
   surgery_charge: {
     type: String,
+    required: true,
   },
   no_of_days: {
     type: String,
@@ -28,6 +30,7 @@ const schema = mongoose.Schema({
   },
   health_card: {
     type: String,
+    required: true,
   },
   advance: {
     type: mongoose.Schema.Types.ObjectId,
