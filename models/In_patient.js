@@ -10,11 +10,12 @@ const schema = mongoose.Schema({
     required: true,
   },
   dateofadmin: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
   dateofdischarge: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
   },
   labreports: [
     {
@@ -26,12 +27,20 @@ const schema = mongoose.Schema({
   roomno: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Room",
+    required: true,
+  },
+  admitted_room_type: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "room_type",
+  },
+  current_room_type: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "room_type",
   },
   doctors: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Doctor",
-      remarks: String,
     },
   ],
   temperature: [
@@ -52,6 +61,9 @@ const schema = mongoose.Schema({
       time: Date.now(),
     },
   ],
+  remarks: {
+    type: String,
+  },
 });
 
 export const In_patient = mongoose.model("In_patient", schema);
