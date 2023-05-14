@@ -5,14 +5,18 @@ const schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  department: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Department",
-  },
-  specialty: {
-    type: String,
-    required: true,
-  },
+  department: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Department",
+    },
+  ],
+  specialty: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
   status: {
     type: String,
     enum: ["A", "P"],
