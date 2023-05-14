@@ -1,22 +1,18 @@
 import mongoose from "mongoose";
 
 const schema = mongoose.Schema({
-  room_number: {
+  name: {
     type: String,
     required: true,
   },
-  location: {
+  charge: {
     type: String,
     required: true,
   },
-  admitted_room_type: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "room_type",
-  },
-  createAt: {
+  createdAt: {
     type: Date,
     Date: Date.now(),
   },
 });
 
-export const Room = mongoose.model("Room", schema);
+export const Room_Type = mongoose.model("Room_Type", schema);
