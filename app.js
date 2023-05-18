@@ -1,4 +1,5 @@
 import express from "express";
+import ErrorMiddleware from "./middlewares/Error.js";
 import { config } from "dotenv";
 config({
   path: "./config/config.env",
@@ -37,3 +38,5 @@ app.use("/api/v1", inpatient);
 app.use("/api/v1", payment);
 
 export default app;
+
+app.use(ErrorMiddleware);

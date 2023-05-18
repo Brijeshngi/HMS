@@ -18,7 +18,6 @@ const schema = mongoose.Schema({
   },
   weight: {
     type: String,
-    required: [true, "Weight required"],
   },
   contact: {
     type: String,
@@ -28,7 +27,6 @@ const schema = mongoose.Schema({
   },
   email: {
     type: String,
-    required: l[(true, "Email required")],
     validate: validator.isEmail,
   },
   address: {
@@ -54,7 +52,8 @@ const schema = mongoose.Schema({
   ],
   prescription: [
     {
-      type: Array,
+      data: String,
+      by: mongoose.Schema.Types.ObjectId,
     },
   ],
   bill: [
@@ -65,10 +64,10 @@ const schema = mongoose.Schema({
   ],
   status: {
     type: String,
-    required: [true, "status required"],
     enum: ["IPD", "OPD"],
+    default: "OPD",
   },
-  date_of_admission: {
+  date_of_register: {
     type: Date,
     Date: Date.now(),
   },
@@ -78,14 +77,19 @@ const schema = mongoose.Schema({
   },
   date_of_discharge: {
     type: Date,
-    Date: Date.now(),
   },
-  summary: {
-    type: String,
-  },
-  advice: {
-    type: String,
-  },
+  summary: [
+    {
+      data: String,
+      by: mongoose.Schema.Types.ObjectId,
+    },
+  ],
+  advice: [
+    {
+      data: String,
+      by: mongoose.Schema.Types.ObjectId,
+    },
+  ],
   createdAt: {
     type: Date,
     Date: Date.now(),
