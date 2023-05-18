@@ -11,6 +11,12 @@ const schema = mongoose.Schema({
       ref: "Department",
     },
   ],
+  degree: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
   specialty: [
     {
       type: String,
@@ -21,10 +27,12 @@ const schema = mongoose.Schema({
     type: String,
     enum: ["A", "P"],
   },
-  patient: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Patient",
-  },
+  patient: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Patient",
+    },
+  ],
   createdAt: {
     type: Date,
     Date: Date.now(),

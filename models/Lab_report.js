@@ -6,7 +6,7 @@ const schema = mongoose.Schema({
     ref: "Patient",
     required: true,
   },
-  doctorname: {
+  doctor_name: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Doctor",
     required: true,
@@ -41,3 +41,5 @@ const schema = mongoose.Schema({
 });
 
 export const Lab_report = mongoose.model("Lab_report", schema);
+
+// make separate test_name with rate

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const schema = mongoose.Schema({
-  patientname: {
+  patient_name: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
@@ -9,22 +9,22 @@ const schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  dateofadmin: {
+  date_of_admin: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
-  dateofdischarge: {
+  date_of_discharge: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
-  labreports: [
+  lab_reports: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Lab_report",
     },
   ],
 
-  roomno: {
+  room_no: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Room",
     required: true,
@@ -49,7 +49,7 @@ const schema = mongoose.Schema({
       time: Date.now(),
     },
   ],
-  bloodpressure: [
+  blood_pressure: [
     {
       type: String,
       time: Date.now(),
