@@ -1,6 +1,7 @@
 import express from "express";
 import ErrorMiddleware from "./middlewares/Error.js";
 import { config } from "dotenv";
+import cors from "cors";
 config({
   path: "./config/config.env",
 });
@@ -14,7 +15,7 @@ app.use(
     extended: true,
   })
 );
-
+app.use(cors());
 // importing routes
 
 import patient from "./routes/patientRoutes.js";
